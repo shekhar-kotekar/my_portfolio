@@ -3,3 +3,5 @@
 My portfolio created by referring this [YouTube video](https://youtu.be/G_ZIJseX6AU)
 
 ## Getting Started
+
+Continue from https://youtu.be/G_ZIJseX6AU?t=453
