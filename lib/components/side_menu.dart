@@ -1,47 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/components/coding.dart';
+import 'package:my_portfolio/components/my_info.dart';
+import 'package:my_portfolio/components/my_skills.dart';
+import 'package:my_portfolio/constants.dart';
 
 class SideMenu extends StatelessWidget {
-  const SideMenu({
-    super.key,
-  });
+  const SideMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        flex: 2,
-        child: Drawer(
-          child: Column(
-            children: [
-              AspectRatio(
-                aspectRatio: 1.23,
-                child: Container(
-                  color: Colors.white,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Spacer(flex: 2),
-                      const CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage("images/me.jpg"),
-                      ),
-                      const Spacer(),
-                      Text(
-                        "Chandrashekhar Kotekar",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      const Text(
-                        "Father, Data Engineer and Flutter Developer",
-                        textAlign: TextAlign.center,
-                        style:
-                            TextStyle(fontWeight: FontWeight.w200, height: 1.5),
-                      ),
-                      const Spacer(flex: 2),
-                    ],
-                  ),
-                ),
-              )
-            ],
+    return const Drawer(
+      child: Column(
+        children: [
+          MyInfo(),
+          Expanded(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(defaultPadding),
+              child: Column(
+                children: [
+                  AreaInfoText(title: "Residence", text: "Norway"),
+                  AreaInfoText(title: "City", text: "Oslo"),
+                  AreaInfoText(title: "Age", text: "37"),
+                  MySkills(),
+                  SizedBox(height: defaultPadding / 2),
+                  Coding(),
+                ],
+              ),
+            ),
           ),
-        ));
+        ],
+      ),
+    );
+  }
+}
+
+class AreaInfoText extends StatelessWidget {
+  final String title;
+  final String text;
+  const AreaInfoText({super.key, required this.title, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: defaultPadding / 2),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(title, style: TextStyle(color: primaryColor)),
+          Text(text, style: TextStyle(color: secondaryColor))
+        ],
+      ),
+    );
   }
 }

@@ -11,29 +11,20 @@ class MainScreen extends StatelessWidget {
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: maxWidth),
-          child: const Row(
-            children: [
-              SideMenu(),
-              ProjectsWidget(),
-            ],
-          ),
+          child: const Row(children: [SideMenu(), Projects()]),
         ),
       ),
     );
   }
 }
 
-class ProjectsWidget extends StatelessWidget {
-  const ProjectsWidget({
+class Projects extends StatelessWidget {
+  const Projects({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        flex: 7,
-        child: Container(
-          color: Colors.blue,
-        ));
+    return Expanded(flex: 7, child: Container(color: Colors.blue));
   }
 }
