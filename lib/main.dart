@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,11 +9,13 @@ import 'package:my_portfolio/screens/main_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+  FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+  FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance);
+  runApp(const MyPortfolioApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyPortfolioApp extends StatelessWidget {
+  const MyPortfolioApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MainScreen(),
+      navigatorObservers: [
+        FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance)
+      ],
     );
   }
 }

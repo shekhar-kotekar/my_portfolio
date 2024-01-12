@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/components/side_menu.dart';
 import 'package:my_portfolio/constants.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
