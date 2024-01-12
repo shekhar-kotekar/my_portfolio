@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "607168453417",
+    "project_id": "react-native-firebase-5a06a",
+    "storage_bucket": "react-native-firebase-5a06a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607168453417:android:6995d8f528eff7c875b538",
+        "android_client_info": {
+          "package_name": "edu.shekhar.my_portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607168453417-uqosdkc3537qj19tvrjf4pl32mto2qtk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz8MpdD-UEANZPEf51wOg1hDSaQmoyDRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607168453417-uqosdkc3537qj19tvrjf4pl32mto2qtk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

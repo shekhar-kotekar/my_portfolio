@@ -1,18 +1,13 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
+import 'package:my_portfolio/firebase_options.dart';
 import 'package:my_portfolio/screens/main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  try {
-    Firebase.initializeApp();
-    FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
-  } catch (e) {
-    print("failed to initialize firebase: $e");
-  }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
