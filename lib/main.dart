@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
 import 'package:my_portfolio/firebase_options.dart';
-import 'package:my_portfolio/screens/main_screen.dart';
+import 'package:my_portfolio/screens/home/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +32,7 @@ class MyPortfolioApp extends StatelessWidget {
                 titleMedium: TextStyle(color: secondaryColor)),
         useMaterial3: true,
       ),
-      home: const MainScreen(),
+      home: const HomeScreen(),
       navigatorObservers: [
         FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance)
       ],

@@ -77,10 +77,7 @@ class MySkill extends StatelessWidget {
           skillName,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
-          style: GoogleFonts.quicksand(
-            fontSize: 16,
-            color: primaryColor,
-          ),
+          style: GoogleFonts.quicksand(fontSize: 16, color: primaryColor),
         )
       ],
     );
