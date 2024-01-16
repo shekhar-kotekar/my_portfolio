@@ -9,26 +9,33 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
-      child: Column(
-        children: [
-          MyInfo(),
-          Expanded(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(defaultPadding),
-              child: Column(
-                children: [
-                  AreaInfoText(title: "Residence", text: "Norway"),
-                  AreaInfoText(title: "City", text: "Oslo"),
-                  AreaInfoText(title: "Age", text: "37"),
-                  MySkills(),
-                  SizedBox(height: defaultPadding / 2),
-                  Coding(),
-                ],
+    return Drawer(
+      child: Container(
+        color: Colors.white,
+        child: const Column(
+          children: [
+            MyInfo(
+              name: "$firstName $lastName",
+              aboutMe: "Father, Data Engineer and Flutter Developer",
+              myImage: "assets/images/me.jpg",
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.all(defaultPadding),
+                child: Column(
+                  children: [
+                    AreaInfoText(title: "Residence", text: "Norway"),
+                    AreaInfoText(title: "City", text: "Oslo"),
+                    AreaInfoText(title: "Age", text: "37"),
+                    MySkills(),
+                    SizedBox(height: defaultPadding / 2),
+                    Coding(),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

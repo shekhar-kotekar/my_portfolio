@@ -4,16 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
 
 class HomeBanner extends StatelessWidget {
-  const HomeBanner({
-    super.key,
-  });
+  const HomeBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 3,
       child: Stack(fit: StackFit.expand, children: [
-        Image.asset("assets/images/bg_ind.jpg", fit: BoxFit.cover),
+        Image.asset("assets/images/bg-1.jpg", fit: BoxFit.fill),
         Container(color: Colors.black.withOpacity(0.25)),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
@@ -24,15 +22,16 @@ class HomeBanner extends StatelessWidget {
               Text(
                 "Discover my amazing\nprojects here!",
                 style: GoogleFonts.quicksand(
-                  fontSize: 60,
+                  fontSize: 52,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Colors.orangeAccent,
                 ),
               ),
+              const SizedBox(height: defaultPadding),
               const MyBuildAnimatedText(),
               const SizedBox(
-                width: defaultPadding / 2,
-                height: defaultPadding / 2,
+                width: defaultPadding,
+                height: defaultPadding,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -67,10 +66,7 @@ class MyBuildAnimatedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
-      style: GoogleFonts.quicksand(
-        fontSize: 24,
-        color: Colors.white,
-      ),
+      style: GoogleFonts.quicksand(fontSize: 24, color: Colors.white),
       child: Row(
         children: [
           const FlutterCodedText(),

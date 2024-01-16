@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyInfo extends StatelessWidget {
+  final String name;
+  final String aboutMe;
+  final String myImage;
   const MyInfo({
     super.key,
+    required this.name,
+    required this.aboutMe,
+    required this.myImage,
   });
 
   @override
@@ -15,19 +21,13 @@ class MyInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const Spacer(flex: 2),
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage("assets/images/me.jpg"),
-            ),
+            CircleAvatar(radius: 50, backgroundImage: AssetImage(myImage)),
             const Spacer(),
+            Text(name, style: Theme.of(context).textTheme.titleMedium),
             Text(
-              "Chandrashekhar Kotekar",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const Text(
-              "Father, Data Engineer and Flutter Developer",
+              aboutMe,
               textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.w200, height: 1.5),
+              style: const TextStyle(fontWeight: FontWeight.w200, height: 1.5),
             ),
             const Spacer(flex: 2),
           ],

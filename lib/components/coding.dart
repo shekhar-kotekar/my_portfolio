@@ -25,11 +25,7 @@ class Coding extends StatelessWidget {
         const AnimatedLanguage(languageName: "Python", percentage: 0.8),
         const AnimatedLanguage(languageName: "Scala", percentage: 0.7),
         const AnimatedLanguage(languageName: "Java", percentage: 0.5),
-        const AnimatedLanguage(
-          languageName: "Rust",
-          percentage: 0.2,
-          animationDuration: 3,
-        )
+        const AnimatedLanguage(languageName: "Rust", percentage: 0.2)
       ],
     );
   }
