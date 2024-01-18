@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
+import 'package:my_portfolio/responsive.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({super.key});
@@ -21,18 +22,20 @@ class HomeBanner extends StatelessWidget {
             children: [
               Text(
                 "Discover my amazing\nprojects here!",
-                style: GoogleFonts.quicksand(
-                  fontSize: 52,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.orangeAccent,
-                ),
+                style: Responsive.isDesktop(context)
+                    ? GoogleFonts.quicksand(
+                        fontSize: 52,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orangeAccent,
+                      )
+                    : GoogleFonts.quicksand(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orangeAccent),
               ),
               const SizedBox(height: defaultPadding),
               const MyBuildAnimatedText(),
-              const SizedBox(
-                width: defaultPadding,
-                height: defaultPadding,
-              ),
+              const SizedBox(width: defaultPadding, height: defaultPadding),
               ElevatedButton(
                 onPressed: () {
                   print("explore now button clicked");
@@ -44,10 +47,7 @@ class HomeBanner extends StatelessWidget {
                     backgroundColor: primaryColor),
                 child: Text(
                   "EXPLORE NOW",
-                  style: GoogleFonts.archivo(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
+                  style: GoogleFonts.archivo(fontSize: 20, color: Colors.white),
                 ),
               )
             ],
@@ -59,9 +59,7 @@ class HomeBanner extends StatelessWidget {
 }
 
 class MyBuildAnimatedText extends StatelessWidget {
-  const MyBuildAnimatedText({
-    super.key,
-  });
+  const MyBuildAnimatedText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -95,9 +93,7 @@ class MyBuildAnimatedText extends StatelessWidget {
 }
 
 class FlutterCodedText extends StatelessWidget {
-  const FlutterCodedText({
-    super.key,
-  });
+  const FlutterCodedText({super.key});
 
   @override
   Widget build(BuildContext context) {

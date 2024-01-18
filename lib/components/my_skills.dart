@@ -3,9 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
 
 class MySkills extends StatelessWidget {
-  const MySkills({
-    super.key,
-  });
+  const MySkills({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +38,7 @@ class MySkill extends StatelessWidget {
   final double percentage;
   final String skillName;
 
-  const MySkill({
-    super.key,
-    required this.skillName,
-    this.percentage = 1.0,
-  });
+  const MySkill({super.key, required this.skillName, this.percentage = 1.0});
 
   @override
   Widget build(BuildContext context) {

@@ -3,9 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
 
 class Coding extends StatelessWidget {
-  const Coding({
-    super.key,
-  });
+  const Coding({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +33,7 @@ class AnimatedLanguage extends StatelessWidget {
   final double percentage;
   final String languageName;
   final int animationDuration;
+
   const AnimatedLanguage({
     super.key,
     required this.languageName,
@@ -59,10 +58,7 @@ class AnimatedLanguage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: defaultPadding / 6),
-            LinearProgressIndicator(
-              value: value,
-              color: primaryColor,
-            ),
+            LinearProgressIndicator(value: value, color: primaryColor),
           ],
         ),
       ),
