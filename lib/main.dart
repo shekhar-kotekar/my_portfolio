@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/constants.dart';
 import 'package:my_portfolio/firebase_options.dart';
 import 'package:my_portfolio/screens/home_screen.dart';
+import 'package:my_portfolio/sections/hero/hero_section.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class MyPortfolioApp extends StatelessWidget {
                 titleMedium: TextStyle(color: secondaryColor)),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const HeroSection(),
       navigatorObservers: [
         FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance)
       ],
